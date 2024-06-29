@@ -75,6 +75,7 @@ const Clock: React.FC<ClockProps> = () => {
             type="string"
             placeholder={defaultHour.toString().padStart(2,'0')}
             onChange={handleInputChange}
+            autoComplete='off'
           />
           <p className='text-white pl-1'>:</p>
           
@@ -83,6 +84,7 @@ const Clock: React.FC<ClockProps> = () => {
             className='bg-transparent outline-transparent text-xl text-white font-[760] italic text-center w-16 focus:outline-none'
             type="string"
             placeholder={defaultMinute.toString().padStart(2,'0')} 
+            autoComplete='off'
             onChange={handleInputChange}
           />
           <p className='text-white pl-1'>:</p>
@@ -92,6 +94,7 @@ const Clock: React.FC<ClockProps> = () => {
             className='bg-transparent outline-transparent text-xl text-white font-[760] italic text-center w-16 focus:outline-none'
             type="string"
             placeholder={defaultSecond.toString().padStart(2,'0')}
+            autoComplete='off'
             onChange={handleInputChange}
           />
         </div>
