@@ -1,0 +1,1 @@
+(function(){"use strict";addEventListener("message",t=>{const{timerValue:a}=t.data,s=Date.now();let e;(()=>{e!==null&&(clearInterval(e),e=setInterval(()=>{Date.now()-s>=a&&e!==null&&(clearInterval(e),self.postMessage({completed:!0}))},1e3))})()})})();
