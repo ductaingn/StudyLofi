@@ -1,8 +1,8 @@
-addEventListener('message', (event: MessageEvent<any>) => {
-  const { timerValue }: { timerValue: number } = event.data;
+addEventListener('message', (event) => {
+  const { timerValue } = event.data;
   const startTime = Date.now();
 
-  let intervalId: number | null = null;
+  let intervalId;
 
   const startTimer = () => {
     if (intervalId !== null) {

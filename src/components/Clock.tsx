@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import Countdown, {CountdownRendererFn } from 'react-countdown';
 
-const worker = new Worker('./utils/worker.ts')
+const worker = new Worker(new URL('../utils/worker.js', import.meta.url));
 
 interface ClockProps {}
 
