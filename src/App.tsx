@@ -1,7 +1,7 @@
 import './App.css'
 import videoBackGround from './assets/fallen_angels.mp4'
 import Clock from './components/Clock'
-import Home from './pages/Home'
+import EmbedPlayer from './components/EmbedPlayer'
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
       </div>
 
       <div className='fixed content-center bottom-12 w-full'>
-        <Home></Home>
+        <EmbedPlayer></EmbedPlayer>
       </div>
       <video className='background_video' src={videoBackGround} autoPlay loop muted/>
     </div>

@@ -2,15 +2,27 @@ import { TextField } from '@mui/material'
 import { useState } from 'react'
 import { Button } from '@mui/material'
 
-const Home = () =>{
+const EmbedPlayer = () =>{
     const [youtubeURL,setYoutubeURL] = useState('');
     const [youtubeEmbedPlayer,setYoutubeEmbedPlayer] = useState(false);
     const [youtubeEmbedLink,setYoutubeEmbedLink] = useState('');
 
     function handleSubmitButton(){
-        const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?youtu(?:\.be|be\.com)\/(?:watch\?v=)?([^\s&]+)/;
+        youtubeURL.replace('m.youtube','youtube')
+        
+        var youtubeRegex: RegExp;
+        if(youtubeURL.search('youtu.be')!==1)
+        {
+            youtubeRegex = /^.*(?:youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#&?]*).*/
+        }
+        else{
+            youtubeRegex = /(?:https?:\/\/)?(?:www\.)?youtu(?:\.be|be\.com)\/(?:watch\?v=)?([^\s&]+)/;
+        }
+        
         const match = String(youtubeURL).match(youtubeRegex);
+        
         const youtubeID = match ? match[1] : '';
+        console.log('after',youtubeID);
         // Check ID valid
         if (youtubeID){
             setYoutubeEmbedLink("https://www.youtube.com/embed/" + youtubeID +"?autoplay=1") ;
@@ -100,4 +112,4 @@ const Home = () =>{
         </div>
     )
 }
-export default Home
+export default EmbedPlayer
